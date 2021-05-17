@@ -22,6 +22,7 @@ RUN chmod +x /actions-runner/install_actions.sh \
 
 COPY token.sh entrypoint.sh /
 RUN chmod +x /token.sh /entrypoint.sh
+RUN chgrp -R 0 /actions-runner && chmod -R g=u /actions-runner
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/actions-runner/bin/runsvc.sh"]
