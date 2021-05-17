@@ -10,8 +10,6 @@ ARG TARGETPLATFORM
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN mkdir -p /actions-runner && chgrp -R 0 /actions-runner && chmod -R g=u /actions-runner
-RUN mkdir -p /actions-runne2 && chgrp -R 0 /actions-runne2 && chmod -R g=u /actions-runne2
 WORKDIR /actions-runner
 
 COPY install_actions.sh /actions-runner
